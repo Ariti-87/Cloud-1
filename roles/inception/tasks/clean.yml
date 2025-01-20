@@ -1,0 +1,13 @@
+- name: Remove docker's services and datas
+  ansible.builtin.shell: 
+    cmd: "make -C {{inception_folder}} fclean"
+
+- name: Remove cron job (reboot)
+  cron:
+    name: "up wordpress site"
+    state: absent
+
+- name: Remove inception folder
+  ansible.builtin.file: 
+    path: "{{inception_folder}}"
+    state: absent

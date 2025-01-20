@@ -1,0 +1,9 @@
+- name: cloud-1
+  hosts: hosts
+  become: yes
+  roles:
+    - docker
+    - make
+    - inception
+
+
