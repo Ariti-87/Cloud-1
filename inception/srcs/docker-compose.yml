@@ -7,8 +7,6 @@ services:
     image: phpmyadmin
     restart: on-failure
     env_file: .env
-    ports:
-      - 9999:80
 
   mariadb:
     container_name: mariadb
